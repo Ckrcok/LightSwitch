@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Top from "./componenets/Top/Top";
+import Bottom from "./componenets/Bottom/Bottom";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  state = {
+    colour: "black"
+  };
+
+  handleOffButtonClicked = () => {
+    console.log("Button Off Clicked");
+    this.setState({ colour: "white" });
+  };
+
+  handleOnButtonClicked = () => {
+    console.log("Button On Clicked");
+    this.setState({ colour: "black" });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Top colour={this.state.colour} />
+        <Bottom
+          handleButtonOff={this.handleOffButtonClicked}
+          handleButtonOn={this.handleOnButtonClicked}
+        />
+      </div>
+    );
+  }
 }
-
-export default App;
