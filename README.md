@@ -1,5 +1,5 @@
 
-<h1> Lights On>
+<h1> Lights On
 
 <img src="https://i.imgur.com/fFmLwaw.png"></img>
 
